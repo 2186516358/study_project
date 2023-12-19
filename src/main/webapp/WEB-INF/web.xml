@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>/login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>housepicture</servlet-name>
+        <servlet-class>com.example.servlet.house.ShowPicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>housepicture</servlet-name>
+        <url-pattern>/images/houseShowPic</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>houseSingle</servlet-name>
+        <servlet-class>com.example.servlet.house.FindSingleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>houseSingle</servlet-name>
+        <url-pattern>/images/findSingle</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>activitypicture</servlet-name>
+        <servlet-class>com.example.servlet.antivity.ShowPicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>activitypicture</servlet-name>
+        <url-pattern>/images/actShowPic</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>orgpicture</servlet-name>
+        <servlet-class>com.example.servlet.org.ShowPicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>orgpicture</servlet-name>
+        <url-pattern>/images/orgShowPic</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servicepicture</servlet-name>
+        <servlet-class>com.example.servlet.service.ShowPicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servicepicture</servlet-name>
+        <url-pattern>/images/serShowPic</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>com.example.servlet.member.UpdateMemberServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+</web-app>

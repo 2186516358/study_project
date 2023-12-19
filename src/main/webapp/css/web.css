@@ -1,0 +1,131 @@
+/*index-header*/
+.nav {
+    padding-left: 350px;
+}
+.nav a{
+    float: left;
+}
+.tag {
+    position: absolute;
+    right: 200px;
+    float: right;
+    width: 370px;
+}
+.tag div{
+    width: 120px;
+    height: 100%;
+    padding: 22px;
+    text-align: center;
+    float: left;
+    cursor:pointer;
+}
+.tag div:hover{
+    background-color: #f3f3f3;
+}
+.title {
+    width: 1920px;
+    height: 38px;
+    border: #000 1px solid;
+    padding-left: 350px;
+    background-color: #800080;
+}
+.title div{
+    text-align: center;
+    width: 105px;
+    line-height: 35px;
+    text-decoration: none;
+    float: left;
+    color: #ffffff;
+}
+.title a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.title div:hover{
+    background-color: #D02090;
+    cursor:pointer;
+}
+
+/*index-foot*/
+.foot{
+    width:1920px;
+    height: 129px;
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 10px;
+    background-color: #800080;
+    color: #DA70D6;
+    border-radius: 5px;
+    float: right;
+}
+
+/*login*/
+.login{
+    float: left;
+    height: 600px;
+    padding-top: 100px;
+    background-image: url("../images/login_background_image.jpg");
+}
+
+/*register*/
+.form-group{
+    height: 100px;
+}
+
+/*index*/
+.fast-nav {
+    width: 1920px;
+    height: 40px;
+    padding-left: 350px;
+    border: #f9f9f9 solid 1px;
+    background-color: #f9f9f9;
+}
+
+.nav-ul li {
+    list-style: none;
+    float: left;
+    width: 100px;
+}
+
+.nav-ul li a {
+    text-decoration: none;
+    color: #0f0f0f;
+}
+
+.more {
+    width: 1900px;
+    padding-left: 350px;
+    padding-right: 350px;
+}
+
+.more-list-header {
+    height: 40px;
+    line-height: 40px;
+    background-color: #800080;
+    color: #ffffff;
+}
+.more-list-header h4{
+    font-weight: bold;
+}
+
+.more-list-header h4,small {
+    float: left;
+}
+
+.more-list-header a{
+    color: #ffffff;
+    float: right;
+}
+
+.more-list-img {
+    height: 210px;
+    width: 210px;
+    float: left;
+}
+
+
+/*activity*/
+.act-detail {
+    width: 100%;
+    height: 50px;
+}

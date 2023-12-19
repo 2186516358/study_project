@@ -1,0 +1,20 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, microsoft yahei;
+	font-size: 14px;
+	height: 100%;
+}
+
+.login-style {
+	padding:10px 30px 20px 30px;
+    height: 290px;
+    border-radius: 15px;
+    background-color: #ebebeb;
+    margin-top: 20px;
+}
+
+.msg-style {
+	padding:10px 30px 20px 30px;
+    height: 290px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
