@@ -9,7 +9,7 @@
 <body>
 <jsp:include page="jsp/index/index-header.jsp"/>
 <%
-    Object message = request.getSession().getAttribute("message");
+    Object message = request.getAttribute("message");
     if (message != null && message!=""){
 %>
     <script type="text/javascript">
