@@ -1,7 +1,5 @@
 package com.example.servlet.org;
 
-import com.example.dao.OrgDao;
-import com.example.dao.impl.OrgDaoImpl;
 import com.example.entity.OrgInfo;
 import com.example.entity.Page;
 import com.example.service.OrgService;
@@ -24,7 +22,6 @@ public class FindAllServlet extends HttpServlet {
         String message = "";
 
         try {
-//            OrgDao dao = new OrgDaoImpl();
             OrgService orgService = new OrgServiceImpl();
             List<OrgInfo> list = orgService.getAll();
             PageUtil<OrgInfo> pageUtil = new PageUtil<>();

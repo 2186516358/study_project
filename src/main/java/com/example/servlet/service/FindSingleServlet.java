@@ -26,15 +26,12 @@ public class FindSingleServlet extends HttpServlet {
 
         try {
             ServiceDao dao = new ServiceDaoImpl();
-//            ServiceTypeDao serviceTypeDao = new ServiceTypeDaoImpl();
             ServiceTypeService service = new ServiceTypeServiceImpl();
             int id = Integer.parseInt(request.getParameter("id"));
             int typeId = Integer.parseInt((request.getParameter("typeId")));
 
             ServiceInfo serviceInfo = dao.findById(id);
             ServiceType serviceType = service.getByTypeId(typeId);
-/*            ServiceInfo serviceInfo = list.get(0);
-            ServiceType serviceType = serviceTypes.get(0);*/
 
             request.getSession().setAttribute("serviceInfo", serviceInfo);
             request.getSession().setAttribute("serviceType", serviceType);

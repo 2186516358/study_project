@@ -18,7 +18,6 @@ public class ShowPicServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         ActivityService activityService = new ActivityServiceImpl();
-//        ActivityDao activityDao = new ActivityDaoImpl();
         ActivityInfo activityInfo = activityService.getById(id);
         byte[] pic = activityInfo.getActPic();
         OutputStream outs = response.getOutputStream();

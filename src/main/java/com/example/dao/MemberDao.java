@@ -2,7 +2,6 @@ package com.example.dao;
 
 import com.example.entity.MemberInfo;
 
-import javax.sound.midi.MetaMessage;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

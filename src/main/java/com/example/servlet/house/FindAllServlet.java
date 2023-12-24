@@ -23,7 +23,6 @@ public class FindAllServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String message = "";
         try {
-//            HouseDao dao = new HouseDaoImpl();
             HouseService houseService = new HouseServiceImpl();
             List<HouseInfo> list = houseService.getAll();
             PageUtil<HouseInfo> pageUtil = new PageUtil<>();

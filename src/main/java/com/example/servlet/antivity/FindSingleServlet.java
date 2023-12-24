@@ -25,7 +25,6 @@ public class FindSingleServlet extends HttpServlet {
 
         try {
             ActivityService activityService = new ActivityServiceImpl();
-//            ActivityDao dao = new ActivityDaoImpl();
             int id = Integer.parseInt(request.getParameter("id"));
 
             ActivityInfo act = activityService.getById(id);

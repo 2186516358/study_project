@@ -21,7 +21,6 @@ public class FindAllServlet extends HttpServlet {
         String message = "";
         try {
             ActivityService activityService = new ActivityServiceImpl();
-//            ActivityDao dao = new ActivityDaoImpl();
             List<ActivityInfo> list = activityService.getAll();
             if(list == null) {
                 throw new NullPointerException();

@@ -18,7 +18,6 @@ public class ShowPicServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-//        MemberLevelDao memberLevelDao = new MemberLevelDaoImpl();
         MemberLevelService memberLevelService = new MemberLevelServiceImpl();
         MemberLevel memberLevel = memberLevelService.getById(id);
         byte[] pic = memberLevel.getLevelPic();

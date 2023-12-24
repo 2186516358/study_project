@@ -35,7 +35,6 @@ public class MemberServlet extends HttpServlet {
                 MemberInfo memberInfo = new MemberInfo();
                 memberInfo.setMemUsername(username);
 
-//                MemberDao dao = new MemberDaoImpl();
                 MemberService memberService = new MemberServiceImpl();
                 memberInfo = memberService.getByName(username);
                 if(memberInfo == null) {
@@ -68,12 +67,11 @@ public class MemberServlet extends HttpServlet {
             memberInfo.setMemEmail(request.getParameter("memEmail"));
             memberInfo.setMemPhone(request.getParameter("memPhone"));
             memberInfo.setMemUsername(request.getParameter("memUsername"));
-            memberInfo.setMemberLevel(new MemberLevel(String.valueOf(new Long(1))));
+            memberInfo.setMemberLevel(new MemberLevel(1));
             Date currentTime = new Date();
             memberInfo.setRegTime(currentTime);
             memberInfo.setMemScore((float) 0);
             if (uploadPic != null) {
-                // 将文件转换为二进制
                 memberInfo.setMemPic(Util.file2byte(uploadPic[0]));
             }
             if (dao.findByName(memberInfo.getMemName()).getId() == null) {

@@ -28,7 +28,6 @@ public class FindAllServlet extends HttpServlet {
 
         try {
             ServiceDao dao = new ServiceDaoImpl();
-//            ServiceTypeDao serviceTypeDao = new ServiceTypeDaoImpl();
             ServiceTypeService service = new ServiceTypeServiceImpl();
             List<ServiceInfo> serviceInfos = dao.findAll();
             List<ServiceType> serviceTypes = service.getTypeAll();

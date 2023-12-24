@@ -25,7 +25,6 @@ public class FindSingleServlet extends HttpServlet {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             HouseService houseService = new HouseServiceImpl();
-//            HouseDao dao = new HouseDaoImpl();
             HouseInfo houseInfo = houseService.getById(id);
 /*            if(houseInfos == null) {
                 throw new NullPointerException();

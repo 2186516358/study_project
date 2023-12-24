@@ -23,7 +23,6 @@ public class FindSingleServlet extends HttpServlet {
 
         try {
             int id = Integer.parseInt(request.getParameter("id"));
-//            OrgDao dao = new OrgDaoImpl();
             OrgService orgService = new OrgServiceImpl();
             OrgInfo orgInfo = orgService.getById(id);
 /*

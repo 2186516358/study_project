@@ -36,10 +36,6 @@ public class LoginServlet extends HttpServlet {
         response.setCharacterEncoding("GBK");
 
         try{
-/*            HouseDao housedao = new HouseDaoImpl();
-            ServiceDao serviceDao = new ServiceDaoImpl();
-            ActivityDao activityDao = new ActivityDaoImpl();*/
-
             HouseService houseService = new HouseServiceImpl();
             Service service = new ServiceImpl();
             ActivityService activityService = new ActivityServiceImpl();
@@ -64,7 +60,6 @@ public class LoginServlet extends HttpServlet {
             MemberInfo memberInfo = new MemberInfo();
             memberInfo.setMemUsername(username);
 
-//            MemberDao dao = new MemberDaoImpl();
             MemberService memberService = new MemberServiceImpl();
             memberInfo = memberService.getByName(username);
 

@@ -3,6 +3,7 @@ package com.example.dao.impl;
 import com.example.dao.MemberDao;
 import com.example.entity.MemberInfo;
 import com.example.utils.DBHelper;
+import com.example.utils.Util;
 
 import java.sql.*;
 
@@ -14,34 +15,31 @@ public class MemberDaoImpl implements MemberDao {
     @Override
     public int insert(MemberInfo memberInfo) throws SQLException {
         int rowCount = 0;
-        try {
-            String sql =
-                    "insert into member_info " +
-                            "(MEM_USERNAME, MEM_PASSWORD, LEVEL_ID, " +
-                            "MEM_NAME, MEM_AGE, MEM_SEX, MEM_ADDRESS, " +
-                            "MEM_TEL, MEM_PHONE, MEM_EMAIL, REG_TIME, " +
-                            "CARD_NO, STATUS, MEM_SCORE,MEM_PIC) " +
-                            "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement pstmt = CONN.prepareStatement(sql);
-            pstmt.setString(1, memberInfo.getMemUsername());
-            pstmt.setString(2, memberInfo.getMemPassword());
-            pstmt.setObject(3, memberInfo.getMemberLevel());
-            pstmt.setString(4, memberInfo.getMemName());
-            pstmt.setString(5, memberInfo.getMemAge());
-            pstmt.setString(6, memberInfo.getMemSex());
-            pstmt.setString(7, memberInfo.getMemAddress());
-            pstmt.setString(8, memberInfo.getMemTel());
-            pstmt.setString(9, memberInfo.getMemPhone());
-            pstmt.setString(10, memberInfo.getMemEmail());
-            pstmt.setDate(11, memberInfo.getRegTime());
-            pstmt.setString(12, memberInfo.getCardNo());
-            pstmt.setString(13, memberInfo.getStatus());
-            pstmt.setFloat(14, memberInfo.getMemScore());
-            pstmt.setBytes(15, memberInfo.getMemPic());
-            rowCount = pstmt.executeUpdate();
-        } catch (Exception e) {
+        try{
+            Statement state = CONN.createStatement();
+            String sql = "insert into member_info (MEM_USERNAME, MEM_PASSWORD, LEVEL_ID, MEM_NAME, MEM_AGE, MEM_SEX, MEM_ADDRESS, MEM_TEL, MEM_PHONE, MEM_EMAIL, REG_TIME, CARD_NO, STATUS, MEM_SCORE,MEM_PIC) value ('" +
+                    memberInfo.getMemUsername() + "','"+
+                    memberInfo.getMemPassword() + "','" +
+                    memberInfo.getMemberLevel().getId() + "','" +
+                    memberInfo.getMemName() + "','" +
+                    memberInfo.getMemAge() + "','" +
+                    memberInfo.getMemSex() + "','" +
+                    memberInfo.getMemAddress() + "','" +
+                    memberInfo.getMemTel() + "','" +
+                    memberInfo.getMemPhone() + "','" +
+                    memberInfo.getMemEmail() + "','" +
+                    Util.changeDate(memberInfo.getRegTime()) + "','" +
+                    memberInfo.getCardNo() + "','" +
+                    memberInfo.getStatus() + "','" +
+                    memberInfo.getMemScore() + "','" +
+                    memberInfo.getMemPic() + "')";
+
+            state.executeUpdate(sql);
+
+        }catch (Exception e){
             e.printStackTrace();
-        } finally {
+            throw e;
+        }finally {
             CONN.close();
         }
         return rowCount;
@@ -93,9 +91,9 @@ public class MemberDaoImpl implements MemberDao {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } finally {
+        }/* finally {
             CONN.close();
-        }
+        }*/
         return memberInfo;
     }
 

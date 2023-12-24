@@ -157,7 +157,7 @@ public class MemberInfo implements Serializable {
         this.memEmail = memEmail;
     }
 
-    public java.sql.Date getRegTime() {
+    public Date getRegTime() {
         return regTime;
     }
 
